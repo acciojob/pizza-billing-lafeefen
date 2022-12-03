@@ -38,16 +38,16 @@ public class Pizza {
     public String getBill(){
         // your code goes here
         if(CheeseToppingsBagBill[0]!=0) {
-            this.price += 80*CheeseToppingsBagBill[0];
-            this.bill += "Extra Cheese Added: "+80*CheeseToppingsBagBill[0]+"\n";
+            this.price += 80;
+            this.bill += "Extra Cheese Added: 80\n";
         }
         if(CheeseToppingsBagBill[1]!=0) {
             if (this.isVeg) {
-                this.price += 70*CheeseToppingsBagBill[1];
-                this.bill += "Extra Toppings Added: "+70*CheeseToppingsBagBill[1]+"\n";
+                this.price += 70;
+                this.bill += "Extra Toppings Added: 70\n";
             } else {
                 this.price += 120*CheeseToppingsBagBill[1];
-                this.bill += "Extra Toppings Added: "+120*CheeseToppingsBagBill[1]+"\n";
+                this.bill += "Extra Toppings Added: 120\n";
             }
         }
         if(CheeseToppingsBagBill[2]!=0) {
