@@ -11,12 +11,11 @@ public class Pizza {
         this.isVeg = isVeg;
         // your code goes here
         for(int i=0;i<4;i++) {this.CheeseToppingsBagBill[i] = 0;}
-        if(this.isVeg) this.price = 300;
-        else this.price = 400;
-        this.bill = "Base Price Of The Pizza: "+this.price+"\n";
     }
 
     public int getPrice(){
+        if(this.isVeg) this.price = 300;
+        else this.price = 400;
         if(CheeseToppingsBagBill[0]!=0) {
             this.price += 80;
         }
@@ -24,7 +23,7 @@ public class Pizza {
             if (this.isVeg) {
                 this.price += 70;
             } else {
-                this.price += 120*CheeseToppingsBagBill[1];
+                this.price += 120;
             }
         }
         if(CheeseToppingsBagBill[2]!=0) {
@@ -50,6 +49,8 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
+        if(isVeg) this.bill = "Base Price Of The Pizza: 300\n";
+        else this.bill = "Base Price Of The Pizza: 400\n";
         if(CheeseToppingsBagBill[0]!=0) {
             this.bill += "Extra Cheese Added: 80\n";
         }
@@ -63,11 +64,7 @@ public class Pizza {
         if(CheeseToppingsBagBill[2]!=0) {
             this.bill += "Paperbag Added: 20\n";
         }
-        if(CheeseToppingsBagBill[3]==0) {
-            getPrice();
-            this.bill += "Total Price: " + this.price;
-            CheeseToppingsBagBill[3]++;
-            return this.bill;
-        }else return "";
+        this.bill += "Total Price: " + getPrice();
+        return this.bill;
     }
 }
