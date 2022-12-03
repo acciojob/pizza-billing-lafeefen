@@ -64,7 +64,8 @@ public class Pizza {
             this.bill += "Paperbag Added: 20\n";
         }
         if(CheeseToppingsBagBill[3]==0) {
-            this.bill += "Total Price: " + getPrice() + "\n";
+            getPrice();
+            this.bill += "Total Price: " + this.price;
             CheeseToppingsBagBill[3]++;
             return this.bill;
         }else return "";
